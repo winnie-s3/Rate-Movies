@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5AB1626-9D63-4A5C-80A1-173B69FCD982}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>rate_movies</RootNamespace>
+    <AssemblyName>rate-movies</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoriaAcao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaAcao.Designer.cs">
+      <DependentUpon>CategoriaAcao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaComedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaComedia.Designer.cs">
+      <DependentUpon>CategoriaComedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaDrama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaDrama.Designer.cs">
+      <DependentUpon>CategoriaDrama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias.Designer.cs">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaSuspense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaSuspense.Designer.cs">
+      <DependentUpon>CategoriaSuspense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaTerror.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriaTerror.Designer.cs">
+      <DependentUpon>CategoriaTerror.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilmeDesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilmeDesc.Designer.cs">
+      <DependentUpon>FilmeDesc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tendencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tendencias.Designer.cs">
+      <DependentUpon>Tendencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Avaliacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Avaliacoes.Designer.cs">
+      <DependentUpon>Avaliacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil.Designer.cs">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CategoriaAcao.resx">
+      <DependentUpon>CategoriaAcao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriaComedia.resx">
+      <DependentUpon>CategoriaComedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriaDrama.resx">
+      <DependentUpon>CategoriaDrama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categorias.resx">
+      <DependentUpon>Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriaSuspense.resx">
+      <DependentUpon>CategoriaSuspense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriaTerror.resx">
+      <DependentUpon>CategoriaTerror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilmeDesc.resx">
+      <DependentUpon>FilmeDesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tendencias.resx">
+      <DependentUpon>Tendencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Avaliacoes.resx">
+      <DependentUpon>Avaliacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINEMA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rate-movies-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pantera-negra_wakanda-para-sempre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adao-negro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rate-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a-mulher-rei.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trem-bala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-gun-maverick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-lugar-errado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thor-amor-e-trovao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\de-ferias-com-a-familia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\te-peguei.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\central-de-inteligencia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alerta-vermelho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\policial-em-apuros-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ghostbusters-mais-alem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persuasao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amor-de-redencao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-policeman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\depois-da-promessa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amor-e-gelato.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\continencia-ao-amor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\after-depois-da-promessa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\naquele-fim-de-semana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resurrection.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fuja.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\umma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marcas-da-maldição.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nao-se-preocupe-querida.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orfa2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nao-nao-olhe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sorria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terrifier2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
