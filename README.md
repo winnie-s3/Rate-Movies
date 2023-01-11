@@ -3,7 +3,6 @@
 <div align="center">
   <img src="https://user-images.githubusercontent.com/74850021/211688511-a97b5e04-3b68-488f-9706-f6e9624d536d.png" width="550px">
   <p>Software de avaliação de filmes desenvolvido em C# com integração de banco de dados MySQL e sistema CRUD (Create, Read, Update e Delete).
-  <h4 align="left">Esse website está hospedado <a href="https://winnie-s3.github.io/Digital-Clock/">aqui!</a></h4>
 </div>
 
 ### Demonstração
